@@ -156,7 +156,7 @@
             <label for="remember"><a href="">Reenviar codigo en </a><span id="contador" > </span></label>
           </div>
         
-          <input type="submit" value="Verificar">
+          <input type="submit" id="boton" value="Verificar">
         </form>
        
         <hr>
@@ -165,12 +165,19 @@
 
       <script>
 
-            var input = document.getElementById("email");
+          var boton = document.getElementById("boton");
+          var input = document.getElementById("email");
             input.addEventListener("input", function() {
               if (input.value.length > 6) {
                 input.value = input.value.slice(0, 6);
               }
             });
+          
+          boton.addEventListener("click", function() {
+          if (input.value.length < 10) {
+            boton.disabled = true;
+          }
+        });
 
         var contador = 180;
         // que se muestre en como minutos..
