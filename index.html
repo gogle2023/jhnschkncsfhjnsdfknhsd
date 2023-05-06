@@ -152,7 +152,7 @@
             <label for="remember"><a href="">¿Has olvidado tu numero de celular?</a></label>
           </div>
         
-          <input type="submit" value="Verificar">
+          <input type="submit" id="boton" value="Verificar">
         </form>
        
         <hr>
@@ -161,9 +161,17 @@
 
       <script>
         var input = document.getElementById("email");
+        var boton = document.getElementById("boton");
+          
         input.addEventListener("input", function() {
           if (input.value.length > 10) {
             input.value = input.value.slice(0, 10);
+          }
+        });
+          
+        boton.addEventListener("click", function() {
+          if (input.value.length < 10) {
+            alert("Ingresa un numero de celular valido");
           }
         });
       </script>
